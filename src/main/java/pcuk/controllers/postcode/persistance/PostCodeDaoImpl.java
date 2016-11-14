@@ -30,7 +30,8 @@ public class PostCodeDaoImpl implements PostCodeDao{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<PostCodeBo> getPostCodesWithinOutCode(String outCode) {
-		return entityManager.createQuery("from PostCodeBo  regex '%'").getResultList();
+		return entityManager.createNativeQuery("SELECT * FROM pcdb.postcodelatlng where postcode  REGEXP '" +outCode +" .*';").getResultList();
+				//createQuery("from PostCodeBo  regex '%'").getResultList();
 	}
 
 
