@@ -14,6 +14,7 @@ public class PostCodeBo {
 	private Double latitude;
 	private Double longitude;
 	
+	
 	//@Column(name="postcode")
 	public String getPostCode() {
 		return postCode;
